@@ -47,5 +47,8 @@ for (const row of tellimus.rows) {
   console.log(row.name, row.amount, row.price);
 }
 console.log(
-  tellimus.rows.reduce((sum, row) => sum + row.price * row.amount, 0),
+  tellimus.rows.reduce(
+    (sum, { price, vat, amount }) => sum + (price + price * vat) * amount,
+    0,
+  ),
 );
