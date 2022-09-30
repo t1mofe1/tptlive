@@ -44,7 +44,11 @@ const tellimus = {
 };
 
 for (const row of tellimus.rows) {
-  console.log(row.name, row.amount, row.price);
+  console.log(
+    row.name,
+    row.amount,
+    (row.price + row.price * row.vat) * row.amount,
+  );
 }
 console.log(
   tellimus.rows.reduce(
