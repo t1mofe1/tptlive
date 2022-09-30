@@ -47,6 +47,7 @@ for (const row of tellimus.rows) {
   console.log(
     row.name,
     row.amount,
+    row.price,
     (row.price + row.price * row.vat) * row.amount,
   );
 }
